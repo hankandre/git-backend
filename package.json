@@ -1,0 +1,22 @@
+{
+  "name": "git-backend",
+  "version": "1.0.0",
+  "description": "An API written with Koajs to serve basic information to a frontend",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "koa",
+    "rethinkdb"
+  ],
+  "author": "Hank Andre",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^1.2.4",
+    "koa-compress": "^1.0.9",
+    "koa-logger": "^1.3.0",
+    "koa-route": "^2.4.2"
+  }
+}

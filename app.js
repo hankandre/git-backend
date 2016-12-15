@@ -2,21 +2,20 @@ let koa = require('koa')
 let logger = require('koa-logger')
 let compress = require('koa-compress');
 let route = require('koa-route');
-
+let { home } = require('./controllers/movies');
 let app = module.exports = koa();
 
-console.log(app);
 
 function * everything(next) {
     console.log(this.method);
+    this.body = yield {message: 'Hello World', anotherMessage: 'Whatever'};
     this.set("Access-Control-Allow-Origin", "*");
     this.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    this.body = yield {message: 'Hello World', anotherMessge: 'Whatever'};
 }
 
 app.use(logger('dev'));
 
-app.use(route.get('/*', everything));
+app.use(route.get('/*', home));
 
 app.use(compress());
 
